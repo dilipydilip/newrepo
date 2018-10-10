@@ -1,0 +1,43 @@
+<div class="loginbox">
+  <h1> Login Here</h1>
+
+  <form [formGroup]="newForm" (ngSubmit)= "onSubmit()">
+    <p>  First Name</p>
+    <input type="text" name="" placeholder="Enter First Name" formControlName="firstName">
+    <div *ngIf="shouldShowInvalid('firstName')" class="form-error">
+      <div *ngIf="firstName.errors.required" role="alert">
+        <p>please enter first name</p>
+      </div>
+    </div>
+    <p> Last Name</p>
+    <input type="text" name="" placeholder="Enter Last Name" formControlName="lastName">
+    <div *ngIf="shouldShowInvalid('lastName')" class="form-error">
+      <div *ngIf="lastName.errors.required" role="alert">
+        <p>please enter last name</p>
+      </div>
+    </div>
+    <p> Email Address</p>
+    <input type="email" name="" placeholder="Enter Email Address"  formControlName="emailAddress">
+    <div *ngIf="shouldShowInvalid('emailAddress')" class="form-error">
+      <div *ngIf="emailAddress.errors.required" role="alert">
+        <p>please enter email address</p>
+      </div>
+    </div>
+    <p> Activity</p>
+    <textarea class="form-control rounded-0" rows="2" cols="24" formControlName="activity"></textarea>
+    <div *ngIf="shouldShowInvalid('activity')" class="form-error">
+      <div *ngIf="activity.errors.required" role="alert">
+        <p>please enter activity</p>
+      </div>
+    </div>
+    <p> Comments</p>
+    <textarea class="form-control rounded-0" rows="2" cols="24" formControlName="comments"></textarea>
+    <div *ngIf="shouldShowInvalid('comments')" class="form-error">
+      <div *ngIf="comments.errors.required" role="alert">
+        <p>please enter comments</p>
+      </div>
+    </div>
+    <input class="btn btn-primary" type="submit" name="" value="submit" [disabled] = "newForm.invalid">
+    {{successMessage}}
+  </form>
+</div>
