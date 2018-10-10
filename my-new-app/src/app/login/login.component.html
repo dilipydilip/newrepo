@@ -1,7 +1,7 @@
 <div class="loginbox">
-  <h1> Login Here</h1>
 
-  <form [formGroup]="newForm" (ngSubmit)= "onSubmit()">
+  <form [formGroup]= "newForm" (ngSubmit)= "onSubmit()">
+    <h1> Login Here</h1>
     <p>  First Name</p>
     <input type="text" name="" placeholder="Enter First Name" formControlName="firstName">
     <div *ngIf="shouldShowInvalid('firstName')" class="form-error">
